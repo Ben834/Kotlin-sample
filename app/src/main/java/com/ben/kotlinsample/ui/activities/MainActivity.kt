@@ -1,16 +1,16 @@
-package com.ben.kotlinsample.activities
+package com.ben.kotlinsample.ui.activities
 
+import android.app.DownloadManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
-import com.ben.kotlinsample.adapters.ForecastListAdapter
+import com.ben.kotlinsample.ui.adapters.ForecastListAdapter
 import com.ben.kotlinsample.R
-import org.jetbrains.anko.find
-
-import org.jetbrains.anko.text
+import com.ben.kotlinsample.data.Request
+import org.jetbrains.anko.*
 
 public class MainActivity : AppCompatActivity() {
 
@@ -31,5 +31,12 @@ public class MainActivity : AppCompatActivity() {
         val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.setLayoutManager(LinearLayoutManager(this))
         forecastList.setAdapter(ForecastListAdapter(items))
+
+        val url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7"
+        async{
+            Request(url).run()
+            uiThread { longToast("Request performed") }
+        }
+
     }
 }
