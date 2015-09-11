@@ -3,6 +3,7 @@ package com.ben.kotlinsample.adapters
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.TextView
+import org.jetbrains.anko.text
 
 /**
  * The adapter for displaying the forecast
@@ -16,7 +17,7 @@ public class ForecastListAdapter(val items: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        return holder.textView.setText(items.get(position))
+        holder.textView.text = items.get(position)
     }
 
     override fun getItemCount(): Int = items.size()
