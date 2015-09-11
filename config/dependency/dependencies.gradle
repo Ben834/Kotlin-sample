@@ -1,0 +1,13 @@
+//Dependencies file to be used in the core module gradle after the 26/07 release
+
+//Android
+def supportLibraryVersion       = "22.2.1"
+
+rootProject.ext.dependencies = [
+
+        //Android
+        supportAppCompatV7              : "com.android.support:appcompat-v7:$supportLibraryVersion",
+        supportRecyclerView             : "com.android.support:recyclerview-v7:$supportLibraryVersion",
+
+]
+
