@@ -9,20 +9,11 @@ import android.view.Menu
 import android.view.MenuItem
 import com.ben.kotlinsample.ui.adapters.ForecastListAdapter
 import com.ben.kotlinsample.R
-import com.ben.kotlinsample.data.Request
+import com.ben.kotlinsample.data.ForecastRequest
+import com.ben.kotlinsample.domain.commands.RequestForecastCommand
 import org.jetbrains.anko.*
 
 public class MainActivity : AppCompatActivity() {
-
-    private val items = listOf(
-            "Mon 6/23 - Sunny - 31/17",
-            "Tue 6/24 - Foggy - 21/8",
-            "Wed 6/25 - Cloudy - 22/17",
-            "Thurs 6/26 - Rainy - 18/11",
-            "Fri 6/27 - Foggy - 21/10",
-            "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
-            "Sun 6/29 - Sunny - 20/7"
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +21,12 @@ public class MainActivity : AppCompatActivity() {
 
         val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.setLayoutManager(LinearLayoutManager(this))
-        forecastList.setAdapter(ForecastListAdapter(items))
 
-        val url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7"
         async{
-            Request(url).run()
-            uiThread { longToast("Request performed") }
+            val result = RequestForecastCommand("94043").execute()
+            uiThread{
+                forecastList.setAdapter(ForecastListAdapter(result))
+            }
         }
 
     }

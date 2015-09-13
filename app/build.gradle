@@ -33,5 +33,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlinVersion"
     compile "org.jetbrains.anko:anko:0.6.2-15s"
 
+    //Third party libraries
+    compile "com.google.code.gson:gson:2.3.1"
+
 }
 
