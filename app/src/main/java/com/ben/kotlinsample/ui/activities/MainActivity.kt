@@ -11,6 +11,7 @@ import com.ben.kotlinsample.ui.adapters.ForecastListAdapter
 import com.ben.kotlinsample.R
 import com.ben.kotlinsample.data.ForecastRequest
 import com.ben.kotlinsample.domain.commands.RequestForecastCommand
+import com.ben.kotlinsample.domain.model.Forecast
 import org.jetbrains.anko.*
 
 public class MainActivity : AppCompatActivity() {
@@ -25,7 +26,11 @@ public class MainActivity : AppCompatActivity() {
         async{
             val result = RequestForecastCommand("94043").execute()
             uiThread{
-                forecastList.setAdapter(ForecastListAdapter(result))
+                forecastList.setAdapter(ForecastListAdapter(result, object : ForecastListAdapter.OnItemClickListener{
+                    override  fun invoke(forecast: Forecast){
+                        toast(forecast.date)
+                    }
+                }));
             }
         }
 
