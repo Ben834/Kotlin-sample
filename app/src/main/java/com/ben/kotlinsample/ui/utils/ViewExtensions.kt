@@ -4,5 +4,5 @@ import android.content.Context
 import android.view.View
 
 //Property extension
-public val View.ctx : Context
+val View.ctx : Context
     get() = getContext()

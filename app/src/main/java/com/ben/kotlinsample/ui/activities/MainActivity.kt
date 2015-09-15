@@ -14,7 +14,7 @@ import com.ben.kotlinsample.domain.commands.RequestForecastCommand
 import com.ben.kotlinsample.domain.model.Forecast
 import org.jetbrains.anko.*
 
-public class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

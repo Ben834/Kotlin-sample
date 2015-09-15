@@ -5,7 +5,7 @@ import com.google.gson.Gson
 import java.net
 import java.net.URL
 
-public class ForecastRequest(val zipcode: String){
+class ForecastRequest(val zipcode: String){
 
     //Object shared between all instances of the class
     companion object {
@@ -13,7 +13,7 @@ public class ForecastRequest(val zipcode: String){
                 "forecast/daily?mode=json&units=metric&cnt=7&q="
     }
 
-    public fun execute(): ForecastResult{
+    fun execute(): ForecastResult{
         val forecastJsonStr = URL(URL + zipcode).readText();
         return Gson().fromJson(forecastJsonStr, javaClass<ForecastResult>())
     }

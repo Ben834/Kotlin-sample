@@ -9,9 +9,9 @@ import java.util.*
 /**
  * Classes need to be mapped from the data to the domain model
  */
-public class ForecastDataMapper{
+class ForecastDataMapper{
 
-    public fun convertFromDataModel(forecast: ForecastResult) : ForecastList{
+    fun convertFromDataModel(forecast: ForecastResult) : ForecastList{
         return ForecastList(forecast.city.name, forecast.city.country,
                 convertForecastListToDomain(forecast.list));
     }
@@ -28,7 +28,7 @@ public class ForecastDataMapper{
     }
 
 
-    private fun generateIconUrl(iconCode: String) : String = "http://openweathermap.org/img/w/$iconCode.png%22"
+    private fun generateIconUrl(iconCode: String) =  "http://openweathermap.org/img/w/$iconCode.png%22"
 
     private fun convertDate(date: Long): String {
         val df = DateFormat.getDateInstance(DateFormat.MEDIUM,

@@ -3,8 +3,8 @@ package com.ben.kotlinsample.domain.model
 /** The domain data classes **/
 data class ForecastList(val city: String, val country: String, val dailyForecast:List<Forecast>){
 
-    public fun get(position: Int) : Forecast = dailyForecast.get(position)
-    public fun size() : Int = dailyForecast.size()
+    fun get(position: Int) = dailyForecast.get(position)
+    fun size() = dailyForecast.size()
 
 }
 
