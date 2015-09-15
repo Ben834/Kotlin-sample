@@ -18,7 +18,7 @@ import org.jetbrains.anko.text
 /**
  * The adapter for displaying the forecast
  */
-public class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: ForecastListAdapter.OnItemClickListener) :
+public class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Forecast) -> Unit) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder? {
@@ -33,7 +33,7 @@ public class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: 
     override fun getItemCount(): Int = weekForecast.size()
 
     /** The {@link ForecastListAdapter} view holder */
-    class ViewHolder(val view: View, val itemClick: OnItemClickListener) : RecyclerView.ViewHolder(view){
+    class ViewHolder(val view: View, val itemClick: (Forecast) -> Unit) : RecyclerView.ViewHolder(view){
 
         private val iconView: ImageView
         private val dateView: TextView
@@ -60,9 +60,4 @@ public class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: 
         }
 
     }
-
-    public interface OnItemClickListener{
-        fun invoke(forecast: Forecast)
-    }
-
 }
