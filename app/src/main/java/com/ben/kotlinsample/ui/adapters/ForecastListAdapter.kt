@@ -1,15 +1,8 @@
 package com.ben.kotlinsample.ui.adapters
 
-import android.R
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import com.ben.kotlinsample.*
-import com.ben.kotlinsample.R
-import com.ben.kotlinsample.R
-import com.ben.kotlinsample.R
 import com.ben.kotlinsample.R
 
 import com.ben.kotlinsample.domain.model.Forecast
@@ -17,10 +10,8 @@ import com.ben.kotlinsample.domain.model.ForecastList
 import com.ben.kotlinsample.ui.utils.ctx
 
 import com.squareup.picasso.Picasso
-import org.jetbrains.anko.find
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.onClick
-import org.jetbrains.anko.text
 
 import kotlinx.android.synthetic.item_forecast.view.*
 

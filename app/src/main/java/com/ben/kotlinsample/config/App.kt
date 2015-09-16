@@ -8,7 +8,7 @@ import kotlin.properties.Delegates
 class App: Application(){
 
     companion object{
-        private var instance : Application by NotNullSingleValueVar()
+        var instance : Application by NotNullSingleValueVar()
     }
 
     override fun onCreate() {
