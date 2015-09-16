@@ -7,12 +7,16 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
+
 import com.ben.kotlinsample.ui.adapters.ForecastListAdapter
 import com.ben.kotlinsample.R
 import com.ben.kotlinsample.data.ForecastRequest
 import com.ben.kotlinsample.domain.commands.RequestForecastCommand
 import com.ben.kotlinsample.domain.model.Forecast
+
 import org.jetbrains.anko.*
+
+import kotlinx.android.synthetic.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.setLayoutManager(LinearLayoutManager(this))
 
         async{

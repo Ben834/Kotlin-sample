@@ -1,19 +1,28 @@
 package com.ben.kotlinsample.ui.adapters
 
+import android.R
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.ben.kotlinsample.*
 import com.ben.kotlinsample.R
+import com.ben.kotlinsample.R
+import com.ben.kotlinsample.R
+import com.ben.kotlinsample.R
+
 import com.ben.kotlinsample.domain.model.Forecast
 import com.ben.kotlinsample.domain.model.ForecastList
 import com.ben.kotlinsample.ui.utils.ctx
+
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.find
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.text
+
+import kotlinx.android.synthetic.item_forecast.view.*
 
 /**
  * The adapter for displaying the forecast
@@ -35,27 +44,13 @@ class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Foreca
     /** The {@link ForecastListAdapter} view holder */
     private class ViewHolder(val view: View, val itemClick: (Forecast) -> Unit) : RecyclerView.ViewHolder(view){
 
-        private val iconView: ImageView
-        private val dateView: TextView
-        private val descriptionView: TextView
-        private val maxTemperatureView: TextView
-        private val minTemperatureView: TextView
-
-        init{
-            iconView = view.find(R.id.icon)
-            dateView = view.find(R.id.date)
-            descriptionView = view.find(R.id.description)
-            maxTemperatureView = view.find(R.id.maxTemperature)
-            minTemperatureView = view.find(R.id.minTemperature)
-        }
-
         fun bindForecast(forecast: Forecast){
             with(forecast){
-                Picasso.with(itemView.ctx).load(iconUrl).into(iconView)
-                dateView.text = date;
-                maxTemperatureView.text = "${high.toString()}"
-                minTemperatureView.text = "${low.toString()}"
-                itemView.onClick { itemClick(forecast) }
+                Picasso.with(itemView.ctx).load(iconUrl).into(itemView.icon)
+                view.date.text = date;
+                view.maxTemperature.text = "${high.toString()}"
+                view.minTemperature.text = "${low.toString()}"
+                view.onClick { itemClick(forecast) }
             }
         }
 

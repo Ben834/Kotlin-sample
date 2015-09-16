@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -37,5 +40,20 @@ dependencies {
     compile "com.google.code.gson:gson:2.3.1"
     compile rootProject.ext.dependencies.picasso
 
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$rootProject.ext.kotlinVersion"
+
+    }
+}
+
+repositories {
+    mavenCentral()
 }
 
