@@ -6,7 +6,7 @@ import com.ben.kotlinsample.config.App
 import org.jetbrains.anko.db.*
 import kotlin.properties.Delegates
 
-private class ForecastDbHelper(ctx : Context = App.instance) : ManagedSQLiteOpenHelper(ctx,
+internal class ForecastDbHelper(ctx : Context = App.instance) : ManagedSQLiteOpenHelper(ctx,
         ForecastDbHelper.DB_NAME, null, ForecastDbHelper.DB_VERSION){
 
     override fun onCreate(db: SQLiteDatabase) {

@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.item_forecast.view.*
 /**
  * The adapter for displaying the forecast
  */
-class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Forecast) -> Unit) :
+internal class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Forecast) -> Unit) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder? {

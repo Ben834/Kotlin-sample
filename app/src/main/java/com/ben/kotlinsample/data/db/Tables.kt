@@ -2,14 +2,14 @@ package com.ben.kotlinsample.data.db
 
 /** Our database tables **/
 
-private object CityForecastTable{
+internal object CityForecastTable{
     val NAME = "CityForecast"
     val ID = "_id"
     val CITY = "city"
     val COUNTRY = "country"
 }
 
-private object DayForecastTable{
+internal object DayForecastTable{
     val NAME = "DayForecast"
     val ID = "_id"
     val DATE = "date"

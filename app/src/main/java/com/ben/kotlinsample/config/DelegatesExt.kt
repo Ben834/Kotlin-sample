@@ -3,7 +3,7 @@ package com.ben.kotlinsample.config
 import kotlin.properties.ReadWriteProperty
 
 /** Custom delegate properties **/
-private class NotNullSingleValueVar<T: Any>() : ReadWriteProperty<Any?, T>{
+internal class NotNullSingleValueVar<T: Any>() : ReadWriteProperty<Any?, T>{
 
     private var value: T? = null
 

@@ -1,11 +1,9 @@
 package com.ben.kotlinsample.data
 
-import android.util.Log
 import com.google.gson.Gson
-import java.net
 import java.net.URL
 
-class ForecastRequest(val zipcode: String){
+internal class ForecastRequest(val zipcode: String){
 
     //Object shared between all instances of the class
     companion object {

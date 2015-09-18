@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import kotlin.properties.Delegates
 
 /** Custom application **/
-class App: Application(){
+internal class App: Application(){
 
     companion object{
         var instance : Application by NotNullSingleValueVar()
