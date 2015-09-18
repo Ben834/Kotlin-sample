@@ -2,6 +2,7 @@ package com.ben.kotlinsample.data.db
 
 /** Our database tables **/
 
+
 internal object CityForecastTable{
     val NAME = "CityForecast"
     val ID = "_id"
