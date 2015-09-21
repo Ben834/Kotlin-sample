@@ -13,7 +13,7 @@ internal class ForecastRequest(val zipcode: String){
 
     fun execute(): ForecastResult{
         val forecastJsonStr = URL(URL + zipcode).readText();
-        return Gson().fromJson(forecastJsonStr, javaClass<ForecastResult>())
+        return Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
     }
 
 
