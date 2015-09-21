@@ -44,7 +44,9 @@ internal class ForecastDbHelper(ctx : Context = App.instance) : ManagedSQLiteOpe
         val DB_NAME = "forecast.db"
         val DB_VERSION = 1
         //The object won't be created until it's used. If the DB is never used, we don't create unnecessary objects.
-        val instance by Delegates.blockingLazy(){ForecastDbHelper()}
+        val instance: ForecastDbHelper by lazy{
+            ForecastDbHelper()
+        }
     }
 
 }
