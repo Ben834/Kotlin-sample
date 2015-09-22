@@ -1,4 +1,4 @@
-package com.ben.kotlinsample.data
+package com.ben.kotlinsample.data.server
 
 import com.google.gson.Gson
 import java.net.URL
@@ -11,7 +11,7 @@ internal class ForecastRequest(val zipcode: String){
                 "forecast/daily?mode=json&units=metric&cnt=7&q="
     }
 
-    fun execute(): ForecastResult{
+    fun execute(): ForecastResult {
         val forecastJsonStr = URL(URL + zipcode).readText();
         return Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
     }

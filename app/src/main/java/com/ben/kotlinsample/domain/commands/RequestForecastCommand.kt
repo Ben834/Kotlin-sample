@@ -1,6 +1,6 @@
 package com.ben.kotlinsample.domain.commands
 
-import com.ben.kotlinsample.data.ForecastRequest
+import com.ben.kotlinsample.data.server.ForecastRequest
 import com.ben.kotlinsample.domain.mappers.ForecastDataMapper
 import com.ben.kotlinsample.domain.model.ForecastList
 

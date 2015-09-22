@@ -1,6 +1,8 @@
 package com.ben.kotlinsample.domain.mappers
 
 import com.ben.kotlinsample.data.*
+import com.ben.kotlinsample.data.server.Forecast
+import com.ben.kotlinsample.data.server.ForecastResult
 import com.ben.kotlinsample.domain.model
 import com.ben.kotlinsample.domain.model.ForecastList
 import java.text.DateFormat

@@ -1,4 +1,4 @@
-package com.ben.kotlinsample.data
+package com.ben.kotlinsample.data.server
 
 /** All the data classes for representing the data request responses **/
 
