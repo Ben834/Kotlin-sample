@@ -3,7 +3,7 @@ package com.ben.kotlinsample.data.server
 import com.google.gson.Gson
 import java.net.URL
 
-internal class ForecastRequest(val zipcode: String){
+internal class ForecastRequest(val zipcode: Long){
 
     //Object shared between all instances of the class
     companion object {

@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         forecastList.setLayoutManager(LinearLayoutManager(this))
 
         async{
-            val result = RequestForecastCommand("94043").execute()
+            val result = RequestForecastCommand(94043).execute()
             uiThread{
-                forecastList.setAdapter(ForecastListAdapter(result,{toast(it.date)}))
+                forecastList.setAdapter(ForecastListAdapter(result,{toast("" + it.date)}))
             }
         }
 

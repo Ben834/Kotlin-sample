@@ -4,9 +4,9 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import com.ben.kotlinsample.config.App
 import org.jetbrains.anko.db.*
-import kotlin.properties.Delegates
 
 
+/** Channel between object oriented and SQL worlds **/
 internal class ForecastDbHelper(ctx : Context = App.instance) : ManagedSQLiteOpenHelper(ctx,
         ForecastDbHelper.DB_NAME, null, ForecastDbHelper.DB_VERSION){
 

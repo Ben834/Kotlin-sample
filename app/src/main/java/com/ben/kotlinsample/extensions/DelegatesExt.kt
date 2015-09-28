@@ -1,9 +1,9 @@
-package com.ben.kotlinsample.config
+package com.ben.kotlinsample.extensions
 
 import kotlin.properties.ReadWriteProperty
 
 /** Custom delegate properties **/
-internal class NotNullSingleValueVar<T: Any>() : ReadWriteProperty<Any?, T>{
+internal class NotNullSingleValueVar<T: Any>() : ReadWriteProperty<Any?, T> {
 
     private var value: T? = null
 

@@ -14,6 +14,8 @@ import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.onClick
 
 import kotlinx.android.synthetic.item_forecast.view.*
+import java.text.DateFormat
+import java.util.*
 
 /**
  * The adapter for displaying the forecast
@@ -38,12 +40,18 @@ internal class ForecastListAdapter(val weekForecast: ForecastList, val itemClick
         fun bindForecast(forecast: Forecast){
             with(forecast){
                 Picasso.with(itemView.ctx).load(iconUrl).into(itemView.icon)
-                view.date.text = date;
+                view.date.text = convertDate(date);
                 view.maxTemperature.text = "${high.toString()}"
                 view.minTemperature.text = "${low.toString()}"
                 view.onClick { itemClick(forecast) }
             }
         }
 
+        private fun convertDate(date: Long): String {
+            val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
+            return df.format(date)
+        }
+
     }
+
 }
